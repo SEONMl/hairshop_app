@@ -1,52 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".designer.fragment.DesignerChattingFragment">
 
-    <!-- 채팅방 헤더 -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="@color/white"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:id="@+id/back"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="6dp"
-            android:textColor="@color/black"
-            android:layout_gravity="center"
-            android:gravity="center_horizontal"
-            android:src="@drawable/icon_back"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="{상호명}"
-            android:textSize="30dp"
-            android:layout_weight="1"
-            android:textColor="@color/black"
-            android:layout_marginLeft="10dp"
-            android:layout_gravity="center"/>
-
-
-    </LinearLayout>
-
-    <!-- 채팅방 리스트 출력 -->
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <!-- 채팅방 헤더 -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-            <!-- 채팅방 구현 -->
+            android:layout_height="60dp"
+            android:background="@color/white"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="6dp"
+                android:gravity="center_horizontal"
+                android:src="@drawable/icon_back"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:text="{상호명}"
+                android:textColor="@color/black"
+                android:textSize="30dp" />
+
 
         </LinearLayout>
 
-    </ScrollView>
+        <!-- 채팅방 리스트 출력 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/chatting_rcv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/recyclerview_chat_item" />
+
+        </LinearLayout>
+    </LinearLayout>
 </FrameLayout>

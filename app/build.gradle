@@ -57,6 +57,9 @@ dependencies {
     implementation "com.kakao.sdk:v2-link:2.8.5" // 메시지(카카오링크)
     implementation "com.kakao.sdk:v2-navi:2.8.5"// 카카오내비
 
+    implementation group: 'com.kakao.sdk', name: 'usermgmt', version: '1.30.0'
+    implementation group: 'com.kakao.sdk', name: 'kakaolink', version: '1.30.5'
+
     // 파이어 베이스 커스텀 로그인, 데이터 베이스
     implementation 'com.google.firebase:firebase-analytics-ktx:20.0.2'
     implementation 'com.google.firebase:firebase-auth-ktx:21.0.1'
